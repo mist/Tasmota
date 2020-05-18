@@ -233,6 +233,13 @@ enum UserSelectablePins {
   GPIO_BOILER_OT_RX,   // OpenTherm Boiler RX pin
   GPIO_BOILER_OT_TX,   // OpenTherm Boiler TX pin
   GPIO_WINDMETER_SPEED,  // WindMeter speed counter pin
+  GPIO_MAX6675_CLK,		// MAX 6675 Thermocouple Clock
+  GPIO_MAX6675_DO,		// MAX 6675 Thermocouple Data
+  GPIO_MAX6675_CS_0,	// MAX 6675 Thermocouple ChipSelect 0
+  GPIO_MAX6675_CS_1,	// MAX 6675 Thermocouple ChipSelect 1
+  GPIO_MAX6675_CS_2,	// MAX 6675 Thermocouple ChipSelect 2
+  GPIO_MAX6675_CS_3,	// MAX 6675 Thermocouple ChipSelect 3
+  GPIO_MAX6675_CS_4,	// MAX 6675 Thermocouple ChipSelect 4
   GPIO_SENSOR_END };
 
 // Programmer selectable GPIO functionality
@@ -286,6 +293,7 @@ const char kSensorNames[] PROGMEM =
   D_SENSOR_RF_SENSOR "|"
   D_SENSOR_AZ_TX "|" D_SENSOR_AZ_RX "|"
   D_SENSOR_MAX31855_CS "|" D_SENSOR_MAX31855_CLK "|" D_SENSOR_MAX31855_DO "|"
+  D_SENSOR_MAX6675_CLK "|" D_SENSOR_MAX6675_DO "|" D_SENSOR_MAX6675_CS "0|" D_SENSOR_MAX6675_CS "1|" D_SENSOR_MAX6675_CS "2|" D_SENSOR_MAX6675_CS "3|" D_SENSOR_MAX6675_CS "4|"
   D_SENSOR_BUTTON "1i|" D_SENSOR_BUTTON "2i|" D_SENSOR_BUTTON "3i|" D_SENSOR_BUTTON "4i|"
   D_SENSOR_BUTTON "1in|" D_SENSOR_BUTTON "2in|" D_SENSOR_BUTTON "3in|" D_SENSOR_BUTTON "4in|"
   D_SENSOR_NRG_SEL "|" D_SENSOR_NRG_SEL "i|" D_SENSOR_NRG_CF1 "|" D_SENSOR_HLW_CF "|" D_SENSOR_HJL_CF "|"
@@ -644,6 +652,15 @@ const uint8_t kGpioNiceList[] PROGMEM = {
   GPIO_MAX31855CS,     // MAX31855 Serial interface
   GPIO_MAX31855CLK,    // MAX31855 Serial interface
   GPIO_MAX31855DO,     // MAX31855 Serial interface
+#endif
+#ifdef USE_MAX6675
+  GPIO_MAX6675_CLK,		// MAX 6675 Thermocouple Clock
+  GPIO_MAX6675_DO,		// MAX 6675 Thermocouple Data
+  GPIO_MAX6675_CS_0,	// MAX 6675 Thermocouple ChipSelect 0
+  GPIO_MAX6675_CS_1,	// MAX 6675 Thermocouple ChipSelect 1
+  GPIO_MAX6675_CS_2,	// MAX 6675 Thermocouple ChipSelect 2
+  GPIO_MAX6675_CS_3,	// MAX 6675 Thermocouple ChipSelect 3
+  GPIO_MAX6675_CS_4,	// MAX 6675 Thermocouple ChipSelect 4
 #endif
 #ifdef ROTARY_V1
   GPIO_ROT1A,          // Rotary switch1 A Pin
